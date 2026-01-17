@@ -16,7 +16,7 @@ pipeline {
             passwordVariable: 'JFROG_API_KEY'
         )]){
         sh '''
-          cd bus-booking
+          cd bus_booking
           git checkout feature-1
           mvn clean install
         '''
@@ -27,7 +27,7 @@ pipeline {
     stage('Publish') {
       steps {
         sh '''
-          cd bus-booking
+          cd bus_booking
           git checkout feature-1
           mvn clean deploy
         '''
